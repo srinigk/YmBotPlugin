@@ -1,0 +1,94 @@
+//
+//  YmBotPlugin.swift
+//  abhic-testing
+//
+//  Created by Priyank Upadhyay on 24/02/20.
+//  Copyright © 2020 Priyank Upadhyay. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+public class YmBotPlugin{
+    public static let shared = YmBotPlugin()
+    
+    //public static let shared = YmBotPlugin()
+    var configData: [String : String]
+    var payloadData: String
+
+    public let events : EventManager
+    var window : UIWindow
+    public init(){
+        self.configData = Dictionary<String, String>()
+        self.payloadData = ""
+        self.events = EventManager()
+        self.window = UIWindow()
+    }
+    
+    public func initPlugin(config : Dictionary<String, String>) {
+        self.configData = config
+    }
+    
+    public func startChatBot(view : UIView){
+        let chatViewer = ChatController()
+        guard let windowScene = view.window?.windowScene else { return }
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = chatViewer
+        self.window = window
+        window.makeKeyAndVisible()
+    }
+    
+    public func stopChatBot(){
+        self.window.rootViewController = nil
+    }
+    
+    public func setPayload(payload: Dictionary<String, String>) {
+            payloadData = "%7B"
+         payload.forEach({ (key: String, value: String) in
+            payloadData += "%22\(key)%22:%22\(value)%22,"
+        })
+        payloadData += "%22Platform%22:%22iOS-App%22%7D"
+    }
+    
+    public static func openWebView(_ sender: Any) {
+           //Set Configuration data
+           let config:[String:String] = ["BotId" : "x1607601182827"]
+
+           //Initialize the plugin with config values.
+           YmBotPlugin.shared.initPlugin(config: config) //Step 1
+
+           //Set EventListener to handle bot events.
+           YmBotPlugin.shared.events.listenTo(eventName: "BotEvent", action: {
+               (information:Any?) in
+               if let info = information as? Dictionary<String, String> {
+                   print("Closing Bot")
+                   //To stop chatbot use the following function
+                   YmBotPlugin.shared.stopChatBot() //Step 5
+                   switch info["code"] {
+                   case "login-user":
+                       //Each event has two keys, "code" and "data". Use info["code"] or info["data"] to access the values
+                       //The following code restarts the chatbot with different payload values.
+                       let payloads:[String:String] = ["UserState":"LoggedIn"]
+                       Self.shared.setPayload(payload: payloads)
+                       Self.shared.startChatBot(view: sender as! UIView)
+                   //Add other cases acording to need.
+                   default:
+                       print("Unknown Event")
+                   }
+               }
+           }) // Step 2
+           
+           //Setting payload values
+           let payloads:[String:String] = ["UserState":"Anonymous"]
+
+           //Pass payload to the bot
+           YmBotPlugin.shared.setPayload(payload: payloads) //Step 3
+
+           //Start the chatbot webview
+           YmBotPlugin.shared.startChatBot(view: sender as! UIView) //Step 4
+       }
+       
+}
+
+
+

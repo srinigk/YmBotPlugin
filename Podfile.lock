@@ -1,0 +1,16 @@
+PODS:
+  - YmBotPlugin (1.0.0)
+
+DEPENDENCIES:
+  - YmBotPlugin (from `.`)
+
+EXTERNAL SOURCES:
+  YmBotPlugin:
+    :path: "."
+
+SPEC CHECKSUMS:
+  YmBotPlugin: e04355dbba2079a89d661adb7edee218d1b42988
+
+PODFILE CHECKSUM: 773aa30610d1e68112646f6e2a5620f40bbcb517
+
+COCOAPODS: 1.10.0
