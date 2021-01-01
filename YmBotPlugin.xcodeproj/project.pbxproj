@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70685FE28029E1C37FB048CC /* Pods_YmBotPluginExampleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDE07BEC2108618137EA698 /* Pods_YmBotPluginExampleTest.framework */; };
+		4B2654525ABCAE53F9965035 /* Pods_YmBotPluginExampleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C585EC5016DEB8231555A9 /* Pods_YmBotPluginExampleTest.framework */; };
 		937B0857259F56A200D37E02 /* YmBotPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937B084D259F56A200D37E02 /* YmBotPlugin.framework */; };
 		937B085C259F56A200D37E02 /* YmBotPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B085B259F56A200D37E02 /* YmBotPluginTests.swift */; };
 		937B085E259F56A200D37E02 /* YmBotPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 937B0850259F56A200D37E02 /* YmBotPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CBE8C1B8E97DDE13D65803F /* Pods-YmBotPluginExampleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YmBotPluginExampleTest.release.xcconfig"; path = "Target Support Files/Pods-YmBotPluginExampleTest/Pods-YmBotPluginExampleTest.release.xcconfig"; sourceTree = "<group>"; };
 		937B084D259F56A200D37E02 /* YmBotPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YmBotPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		937B0850259F56A200D37E02 /* YmBotPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YmBotPlugin.h; sourceTree = "<group>"; };
 		937B0851259F56A200D37E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,9 +75,8 @@
 		937B0893259F57A900D37E02 /* YmBotPluginExampleTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YmBotPluginExampleTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		937B0897259F57A900D37E02 /* YmBotPluginExampleTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YmBotPluginExampleTestUITests.swift; sourceTree = "<group>"; };
 		937B0899259F57A900D37E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CCDE07BEC2108618137EA698 /* Pods_YmBotPluginExampleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YmBotPluginExampleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1E320275AAFA4C4FE0E54DB /* Pods-YmBotPluginExampleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YmBotPluginExampleTest.debug.xcconfig"; path = "Target Support Files/Pods-YmBotPluginExampleTest/Pods-YmBotPluginExampleTest.debug.xcconfig"; sourceTree = "<group>"; };
-		E7BA3BA8B5EA98F09C32EE56 /* Pods-YmBotPluginExampleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YmBotPluginExampleTest.release.xcconfig"; path = "Target Support Files/Pods-YmBotPluginExampleTest/Pods-YmBotPluginExampleTest.release.xcconfig"; sourceTree = "<group>"; };
+		AC1F16C8271581F589C0FCD3 /* Pods-YmBotPluginExampleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YmBotPluginExampleTest.debug.xcconfig"; path = "Target Support Files/Pods-YmBotPluginExampleTest/Pods-YmBotPluginExampleTest.debug.xcconfig"; sourceTree = "<group>"; };
+		F6C585EC5016DEB8231555A9 /* Pods_YmBotPluginExampleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YmBotPluginExampleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70685FE28029E1C37FB048CC /* Pods_YmBotPluginExampleTest.framework in Frameworks */,
+				4B2654525ABCAE53F9965035 /* Pods_YmBotPluginExampleTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,12 +120,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E46988A3B2812F7F0E45498 /* Frameworks */ = {
+		196A4D816ED20513D776D6B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CCDE07BEC2108618137EA698 /* Pods_YmBotPluginExampleTest.framework */,
+				F6C585EC5016DEB8231555A9 /* Pods_YmBotPluginExampleTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83CE4F56CA685058DD0ECE91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC1F16C8271581F589C0FCD3 /* Pods-YmBotPluginExampleTest.debug.xcconfig */,
+				4CBE8C1B8E97DDE13D65803F /* Pods-YmBotPluginExampleTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		937B0843259F56A200D37E02 = {
@@ -137,8 +147,8 @@
 				937B088B259F57A900D37E02 /* YmBotPluginExampleTestTests */,
 				937B0896259F57A900D37E02 /* YmBotPluginExampleTestUITests */,
 				937B084E259F56A200D37E02 /* Products */,
-				EF56CE7B66BF05E31B22398F /* Pods */,
-				4E46988A3B2812F7F0E45498 /* Frameworks */,
+				83CE4F56CA685058DD0ECE91 /* Pods */,
+				196A4D816ED20513D776D6B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,16 +218,6 @@
 			path = YmBotPluginExampleTestUITests;
 			sourceTree = "<group>";
 		};
-		EF56CE7B66BF05E31B22398F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E1E320275AAFA4C4FE0E54DB /* Pods-YmBotPluginExampleTest.debug.xcconfig */,
-				E7BA3BA8B5EA98F09C32EE56 /* Pods-YmBotPluginExampleTest.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -272,11 +272,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 937B089A259F57A900D37E02 /* Build configuration list for PBXNativeTarget "YmBotPluginExampleTest" */;
 			buildPhases = (
-				83DF91392916FB7EFC2FB83B /* [CP] Check Pods Manifest.lock */,
+				8998C366A4D785649B76B12D /* [CP] Check Pods Manifest.lock */,
 				937B086F259F57A500D37E02 /* Sources */,
 				937B0870259F57A500D37E02 /* Frameworks */,
 				937B0871259F57A500D37E02 /* Resources */,
-				B642951DA5142E7B19DEEE00 /* [CP] Copy Pods Resources */,
+				8C5A2C0A5D9B35A426FFC9A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -418,7 +418,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		83DF91392916FB7EFC2FB83B /* [CP] Check Pods Manifest.lock */ = {
+		8998C366A4D785649B76B12D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,7 +440,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B642951DA5142E7B19DEEE00 /* [CP] Copy Pods Resources */ = {
+		8C5A2C0A5D9B35A426FFC9A0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -751,7 +751,7 @@
 		};
 		937B089B259F57A900D37E02 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1E320275AAFA4C4FE0E54DB /* Pods-YmBotPluginExampleTest.debug.xcconfig */;
+			baseConfigurationReference = AC1F16C8271581F589C0FCD3 /* Pods-YmBotPluginExampleTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -769,7 +769,7 @@
 		};
 		937B089C259F57A900D37E02 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7BA3BA8B5EA98F09C32EE56 /* Pods-YmBotPluginExampleTest.release.xcconfig */;
+			baseConfigurationReference = 4CBE8C1B8E97DDE13D65803F /* Pods-YmBotPluginExampleTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

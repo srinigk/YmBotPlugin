@@ -2,8 +2,8 @@
   "name": "YmBotPlugin",
   "version": "1.0.0",
   "summary": "A plugin for Yellow messenger.",
-  "description": "A plugin for Yellow Messenger",
-  "homepage": "https://github/srinigk/YmBotPlugin",
+  "description": "A plugin for Yellow Messenger. A plugin for Yellow Messenger. A plugin for Yellow Messenger.",
+  "homepage": "https://github.com/srinigk",
   "license": "MIT",
   "authors": {
     "G Srinivasa": "srinivasa.g@connectm.com"
@@ -20,6 +20,7 @@
     "Classes/**/*.{h,m,swift}"
   ],
   "exclude_files": "Classes/Exclude",
+  "public_header_files": "Classes/**/*.h",
   "resource_bundles": {
     "YmBotPlugin": [
       "YmBotPlugin/*/Assets.xcassets"
