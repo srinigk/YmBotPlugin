@@ -50,45 +50,71 @@ public class YmBotPlugin{
         payloadData += "%22Platform%22:%22iOS-App%22%7D"
     }
     
+    public static func intializeYM(userID: String, accessToken: String, refreshToken: String, mobileNumber: String, journalSlug: String, userState: String){
+        //Set Configuration data
+        let config:[String:String] = ["BotId" : userID]
+
+        //Initialize the plugin with config values.
+        YmBotPlugin.shared.initPlugin(config: config) //Step 1
+
+        //Set EventListener to handle bot events.
+        YmBotPlugin.shared.events.listenTo(eventName: "BotEvent", action: {
+            (information:Any?) in
+            if let info = information as? Dictionary<String, String> {
+                print("Closing Bot")
+                //To stop chatbot use the following function
+                YmBotPlugin.shared.stopChatBot() //Step 5
+                switch info["code"] {
+                case "login-user":
+                    //Each event has two keys, "code" and "data". Use info["code"] or info["data"] to access the values
+                    //The following code restarts the chatbot with different payload values.
+                    let payloads:[String:String] = ["UserState":"LoggedIn"]
+                    Self.shared.setPayload(payload: payloads)
+                    Self.shared.startChatBot(view: sender as! UIView)
+                //Add other cases acording to need.
+                default:
+                    print("Unknown Event")
+                }
+            }
+        }) // Step 2
+        
+        //Setting payload values
+        let payloads:[String:String] = ["UserState":userState]
+
+        //Pass payload to the bot
+        YmBotPlugin.shared.setPayload(payload: payloads) //Step 3
+    }
+    
+    public static func invokeChatBot(){
+        if let topVC = UIApplication.getTopViewController() {
+            let sender:UIView = topVC.view
+        }
+        //Start the chatbot webview
+          YmBotPlugin.shared.startChatBot(view: sender as! UIView) //Step 4
+
+    }
+    
     public static func openWebView(_ sender: Any) {
-           //Set Configuration data
-           let config:[String:String] = ["BotId" : "x1607601182827"]
 
-           //Initialize the plugin with config values.
-           YmBotPlugin.shared.initPlugin(config: config) //Step 1
 
-           //Set EventListener to handle bot events.
-           YmBotPlugin.shared.events.listenTo(eventName: "BotEvent", action: {
-               (information:Any?) in
-               if let info = information as? Dictionary<String, String> {
-                   print("Closing Bot")
-                   //To stop chatbot use the following function
-                   YmBotPlugin.shared.stopChatBot() //Step 5
-                   switch info["code"] {
-                   case "login-user":
-                       //Each event has two keys, "code" and "data". Use info["code"] or info["data"] to access the values
-                       //The following code restarts the chatbot with different payload values.
-                       let payloads:[String:String] = ["UserState":"LoggedIn"]
-                       Self.shared.setPayload(payload: payloads)
-                       Self.shared.startChatBot(view: sender as! UIView)
-                   //Add other cases acording to need.
-                   default:
-                       print("Unknown Event")
-                   }
-               }
-           }) // Step 2
-           
-           //Setting payload values
-           let payloads:[String:String] = ["UserState":"Anonymous"]
-
-           //Pass payload to the bot
-           YmBotPlugin.shared.setPayload(payload: payloads) //Step 3
-
-           //Start the chatbot webview
-           YmBotPlugin.shared.startChatBot(view: sender as! UIView) //Step 4
-       }
+         }
        
 }
 
 
+extension UIApplication {
 
+    class func getTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+
+        if let nav = base as? UINavigationController {
+            return getTopViewController(base: nav.visibleViewController)
+
+        } else if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
+            return getTopViewController(base: selected)
+
+        } else if let presented = base?.presentedViewController {
+            return getTopViewController(base: presented)
+        }
+        return base
+    }
+}

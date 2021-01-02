@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 
     @IBAction func onInvokeYM(_ sender: UIButton) {
         YmBotPlugin.openWebView(sender)
+        //YmBotPlugin.initializeYM
     }
 }
 
